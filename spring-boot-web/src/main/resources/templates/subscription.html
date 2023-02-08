@@ -5,7 +5,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>Spring Boot Thymeleaf Example</title>
+<title>Subscription</title>
 
 <link rel="stylesheet"
 	th:href="@{webjars/bootstrap/5.2.3/css/bootstrap.min.css}" />
@@ -19,16 +19,21 @@
 		<a class="navbar-brand" href="/">home</a> <a class="navbar-brand"
 			href="https://lms.pluralcamp.com" target="_blank">pluralcamp</a> <a
 			class="navbar-brand" href="/students">students</a> <a
-			class="navbar-brand" href="/addStudent">Add Student</a>
+			class="navbar-brand" href="/addStudent">Add Student</a> <a
+			class="navbar-brand" href="/deleteStudent">Delete Student</a>
 	</nav>
 
 	<main role="main" class="container">
 
 		<div class="starter-template">
-			<h1>Spring Boot Web Thymeleaf Example</h1>
-			<h2>
-				<span th:text="${email} + ' is subscribed now to our newsletter'"></span>
-			</h2>
+			<h1>Subscription</h1>
+
+			<div th:switch="${option}">
+				<p th:case="true">"Dirección de correo suscrita a nuestro newsletter!"</p>
+				<p th:case="false">"Dirección de correo no indicada. Por favor intente de nuevo. Gracias"</p>
+				<p th:case="*">Default case</p>
+			</div>
+
 		</div>
 
 	</main>

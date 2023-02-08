@@ -16,11 +16,11 @@
 <body>
 
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-		<a class="navbar-brand" href="/">home</a>
-		<a class="navbar-brand" href="https://lms.pluralcamp.com" target="_blank">pluralcamp</a>
-		<a class="navbar-brand" href="/students">students</a> 
-		<a class="navbar-brand" href="/addStudent">Add Student</a>
-		<a class="navbar-brand" href="/deleteStudent">Delete Student</a>
+		<a class="navbar-brand" href="/">home</a> <a class="navbar-brand"
+			href="https://lms.pluralcamp.com" target="_blank">pluralcamp</a> <a
+			class="navbar-brand" href="/students">students</a> <a
+			class="navbar-brand" href="/addStudent">Add Student</a> <a
+			class="navbar-brand" href="/deleteStudent">Delete Student</a>
 	</nav>
 
 	<main role="main" class="container">
@@ -35,7 +35,9 @@
 								<input type="email" class="form-control" name="email"
 									placeholder="Enter your email"> <span
 									class="input-group-btn">
-									<button class="btn btn-theme" type="submit">Subscribe</button>
+
+<!-- th:if="${email.empty}"  -->
+										<button	class="btn btn-theme" type="submit">Subscribe</button>
 								</span>
 							</form>
 						</div>
@@ -45,9 +47,7 @@
 		</section>
 
 
-		<div class="starter-template">
-
-		</div>
+		<div class="starter-template"></div>
 
 	</main>
 	<!-- /.container -->

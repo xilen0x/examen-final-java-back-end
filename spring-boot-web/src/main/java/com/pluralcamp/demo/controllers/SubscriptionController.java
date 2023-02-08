@@ -14,26 +14,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SubscriptionController {
 	
 	//inject via application.properties
-	@Value("${welcome.email}")
+	//@Value("${welcome.email}")
 	private String email;
+	private boolean option = false;
 	
 	@GetMapping("/")
 	public String mainWithParam() {
 		return "index"; //view
 	}
 
-	//sempre que vulgui comunicar des del controlador
-	//a la vista ho faré amb l'objecte de tipus Model
-	// /hello?name=kotlin
+	//siempre que quiera comunicar desde el controlador
+	//a la vista lo haré con el objeto de tipo Model
 	@GetMapping("/subscription")
-	public String mainWithParam(
-			@RequestParam(name = "email", required = false, defaultValue = "") 
+	public String mainWithParam(@RequestParam(name = "email", required = false, defaultValue = "") 
 			String email, Model model) {
+		
 		if(email.equals("")) {
-			model.addAttribute("email", this.email);
+			model.addAttribute("option", this.option);
+			option = false; 
 		}else {
 			model.addAttribute("email", email);
+			option = true; 
 		}
+		
 		return "subscription"; //view
 	}
 }

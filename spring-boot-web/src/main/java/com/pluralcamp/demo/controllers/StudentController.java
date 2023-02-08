@@ -22,8 +22,9 @@ public class StudentController {
 	private WebClient webClient =
 			WebClient.create(SpringBootWebApplication.API_URL);
 
-	@GetMapping("/students/students")
+	@GetMapping("/students")
 	public String getStudents(Model model){
+		
 		Mono<List<Student>> response =  this.webClient.get()
 		.uri("/student/students")
 		.accept(MediaType.APPLICATION_JSON)
